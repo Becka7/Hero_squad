@@ -1,4 +1,5 @@
 import spark.ModelAndView;
+import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,11 +10,11 @@ public class App {
 
         staticFileLocation("/public");
 
-        get("/",((request, response) -> {
+        get("/",(request, response) -> {
             Map<String,Object>model = new HashMap<String,Object>();
-            return new ModelAndView(new HashMap(),"squad.hbs")
+            return new ModelAndView(new HashMap(),"squad.hbs");
 
-        }));
+        }, new HandlebarsTemplateEngine());
     }
 
 }
