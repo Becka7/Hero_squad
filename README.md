@@ -1,7 +1,7 @@
 # Hero-Squad
 ### Superhero recruitment created at :9th Aug 2021
 
-###by:Rabecca Nzau
+### by:Rabecca Nzau
 ## Description
 This is a web application that allows you to recruit a well-balanced team of superheroes and add them into a squad dedicated to a certain cause.
 ## Setup/Installation Requirements
