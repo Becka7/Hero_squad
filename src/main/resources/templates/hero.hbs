@@ -1,0 +1,22 @@
+{{!-- {{{#partial"header"}} --}}
+
+{{!-- {{/partial}} --}}
+
+{{#partial"content"}}
+<h1>Meet the heros</h1>
+{{#each myHeros}}
+<div class="col-md-4 card">
+    <h2>{{ name }}  {</h2>
+    <h3>{{age}}</h3>
+    <img scr='/images/spider2.jpeg' alt='Spider man'>
+    <p>Strengths:{{power}}</p>
+    <p>Strengths:{{weakness}}</p>
+
+  </div>
+  {{/each}}
+ {{/partial}}
+
+{{!--  {{#partial"footer"}} --}}
+
+{{!--  {{/partial}} --}}
+ {{> layout.hbs}}

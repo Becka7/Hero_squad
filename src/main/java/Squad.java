@@ -25,7 +25,7 @@ public class Squad {
         this.maxsize = maxsize;
     }
 
-    public static ArrayList<Squad> getmInstances() {
+    public static ArrayList<Squad> getAll() {
         return mInstances;
     }
 }
