@@ -1,5 +1,24 @@
 
-{{!--                  <p> <a href ='/hero.hbs'>Checkout some of the photos i took</a> </p> --}}
-{{!--                  <p>Travel Enthusiast Jane</p> --}}
-{{!--                  <p><a href='/heroform.hbs'>Fill out this form if you are interested in joining me</a></p> --}}
-{{!--                  <p><a href ='/grreeting-cards.hbs'>write your own letter</a></p> --}}
+
+   {{#partial "header"}}
+
+   {{/partial}}
+   {{#partial "content"}}
+
+       <h1>Meet the Squads</h1>
+
+       {{#if squad}}
+           {{#each squad}}
+               <div class ="col-md-4 card">
+                   <h3>Name:{{name}}</h3>
+                   <p>Cause:{{cause}}</p>
+                   <p>Maximum size:{{maxsize}}</p>
+               </div>
+           {{/each}}
+           {{else}}
+                    <P>No squads have been added!</p>
+       {{/if}}
+
+   {{/partial}}
+
+   {{> layout.hbs}}

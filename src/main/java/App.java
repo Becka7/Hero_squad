@@ -52,23 +52,42 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
 
-        get("/squads", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            return new ModelAndView(model, "squad.hbs");
-        }, new HandlebarsTemplateEngine());
+//
 
-        get("/squads", (request, response) -> {
+        get("/squad/list", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            ArrayList<Squad> squads = Squad.getAll();
-            model.put("squads", squads);
-            return new ModelAndView(new HashMap(), "squad.hbs");
+            ArrayList<Squad> squad = Squad.getAll();
+            model.put("squad", squad);
+            return new ModelAndView(model, "squad.hbs");
         }, new HandlebarsTemplateEngine());
 
 
         get("/heroform.hbs", (request, response) -> {
-//            Map<String, Object> model = new HashMap<String, Object>();
-            return new ModelAndView(new HashMap(), "heroform.hbs");
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "heroform.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/Squadform.hbs", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "Squadform.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/squads/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String name = request.queryParams("name");
+            String cause = request.queryParams("cause");
+            int maxsize = Integer.parseInt(request.queryParams("maxsize"));
+
+            Squad squad = new Squad(name,cause,maxsize);
+            model.put("squad" ,squad);
+
+            return new ModelAndView(model, "Squadsuccess.hbs");
+        }, new HandlebarsTemplateEngine());
+
+//        get("squad/success", (request, response) -> {
+//            Map<String, Object> model = new HashMap<String, Object>();
+//            return new ModelAndView(model,"success.hbs");
+//        }, new HandlebarsTemplateEngine());
 
 
 

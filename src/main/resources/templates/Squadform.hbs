@@ -1,0 +1,33 @@
+{{#partial "header"}}
+{{/partial}}
+
+{{#partial "content"}}
+<form action="/squads/new" method="POST">
+<div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="name" class="col-form-label" >Squad Name</label>
+  </div>
+  <div class="col-auto">
+    <input type="text" id="name" name="name" class="form-control" >
+  </div>
+  <div class="col-auto">
+    <label for="cause" class="col-form-label" >Squad Cause</label>
+  </div>
+  <div class="col-auto">
+     <input type="text" id="cause" name="cause" class="form-control" >
+  </div>
+  <div class="col-auto">
+      <label for="maxsize" class="col-form-label" >Maximum size</label>
+    </div>
+    <div class="col-auto">
+      <input type="number" id="maxsize" name="maxsize" class="form-control" >
+    </div>
+
+    <button type="submit" class="btn">Add Squad</button>
+</div>
+</form>
+{{/partial}}
+{{#partial "footer"}}
+
+{{/partial}}
+{{> layout.hbs}}
