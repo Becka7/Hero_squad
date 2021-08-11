@@ -5,12 +5,14 @@ public class Squad {
     private  String cause;
     private int maxsize;
     private static ArrayList<Squad>mInstances=new ArrayList<>();
+    private int id;
 
     public Squad(String name, String cause,int maxsize){
         this.name=name;
         this.cause=cause;
         this.maxsize=maxsize;
-        this.mInstances.add(this);
+        mInstances.add(this);
+        this.id = mInstances.size();
     }
 
     public String getName() {
@@ -27,6 +29,14 @@ public class Squad {
 
     public static ArrayList<Squad> getAll() {
         return mInstances;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
 

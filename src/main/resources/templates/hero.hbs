@@ -1,22 +1,30 @@
 {{!-- {{{#partial"header"}} --}}
 
-{{!-- {{/partial}} --}}
+{{#partial "header"}}
 
-{{#partial"content"}}
-<h1>Meet the heros</h1>
-{{#each myHeros}}
-<div class="col-md-4 card">
-    <h2>{{ name }}  {</h2>
-    <h3>{{age}}</h3>
-    <img scr='/images/spider2.jpeg' alt='Spider man'>
-    <p>Strengths:{{power}}</p>
-    <p>Strengths:{{weakness}}</p>
+{{/partial}}
+{{#partial "content"}}
 
-  </div>
-  {{/each}}
+    <h1>Meet the Heros</h1>
+
+    {{#if heros}}
+        {{#each heros}}
+            <div class ="col-md-4 card">
+                <h3>Name: {{name}} </h3>
+                <p>Age: {{age}}</p>
+                <p>Power: {{power}}</p>
+                <p>Weakness: {{weakness}}</p>
+                <p>{{name}}</P>
+            </div>
+        {{/each}}
+        {{else}}
+            <p>No heroes added yet!!</p>
+    {{/if}}
+
+{{/partial}}
+
+ {{#partial"footer"}}
+
  {{/partial}}
+{{> layout.hbs}}
 
-{{!--  {{#partial"footer"}} --}}
-
-{{!--  {{/partial}} --}}
- {{> layout.hbs}}

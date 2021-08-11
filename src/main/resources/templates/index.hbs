@@ -2,16 +2,25 @@
       <html>
          <head>
              <title>Hello</title>
-             <link rel='stylesheet' + href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-             <link rel='stylesheet'+href="/app.css">
+             <link rel='stylesheet'  href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+             <link rel='stylesheet' href='/app.css'>
          </head>
          <body>
-               <div id =starter>
+               <div class ="container" id =starter display:"flex";>
                    <nav>
                         <h1>Hero Squad </h1>
-                        <h2><a href ='/hero.hbs'>Checkout Heros</a></h2>
-                        <h2><a href ='/squad.hbs'>Checkout Squads</a></h2>
+                        <div>
+                        <h2><a href ='/heros/list'>Heros</a></h2>
+                        <h2><a href ='/squad.hbs'>Squads</a></h2>
+                        </div>
                    </nav>
-               <div>
+               </div>
+               <div class ="container">
+                    <img src ="/images/blue-removebg-preview.png" alt="spiderman">
+                     <h2>Sworn to protect a world that has been taught to hate and fear them </h2>
+                     <button><a href="heroform.hbs"/>Add Hero</a></button>
+
+               </div>
          </body>
       </html>
+{{!--  background-image:url("/images/wosuba-removebg-preview.png"); --}}

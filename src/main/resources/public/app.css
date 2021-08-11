@@ -1,9 +1,30 @@
 body
 {
-    color:blue;
+
+  background-repeat:no-repeat;
+  background-size:cover;
+  color:white;
+
 
 }
 #starter
 {
-    margin:30%;
+
+    display:flex;
+}
+img{
+    float:right;
+    height:150vh;
+    marigin-top:0%;
+
+}
+nav{
+    display:flex;
+    background-color:blue;
+}
+a{
+    float:right;
+}
+h1{
+    margin-right:70%;
 }
