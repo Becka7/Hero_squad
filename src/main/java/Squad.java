@@ -38,5 +38,9 @@ public class Squad {
     public void setId(int id) {
         this.id = id;
     }
+
+    public static Squad findById(int id){
+       return mInstances.get(id -1);
+    }
 }
 

@@ -7,6 +7,7 @@ public class Heros {
     private String weakness;
     private static ArrayList<Heros>mInstance= new ArrayList<Heros>();
     private int id;
+    private int squadId;
 
 
     public Heros(String name,int age ,String power,String weakness){
@@ -14,6 +15,7 @@ public class Heros {
         this.age=age;
         this.power=power;
         this.weakness=weakness;
+        this.squadId = squadId;
         mInstance.add(this);
         this.id = mInstance.size();
 
@@ -34,5 +36,17 @@ public class Heros {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getSquadId() {
+        return squadId;
+    }
+
+    public void setSquadId(int squadId) {
+        this.squadId = squadId;
+    }
+
+    public void deleteHero(){
+        mInstance.remove(id-1);
     }
 }

@@ -23,11 +23,16 @@ public class App {
             int age = Integer.parseInt(request.queryParams("age"));
             String power = request.queryParams("power");
             String weakness = request.queryParams("weakness");
+
+            ArrayList<Squad> squads =Squad.getAll();
+            model.put("squads",squads);
+            int squadId = Integer.parseInt(request.params("squadId"));
+
             Heros heros = new Heros(name,age,power,weakness);
             model.put("heros" ,heros);
 
             System.out.println(request.queryParams("name"));
-            return new ModelAndView(model, "success.hbs");
+            return new ModelAndView(model, "success.css");
         }, new HandlebarsTemplateEngine());
 
 
@@ -43,19 +48,21 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             ArrayList<Heros> heros=Heros.getAll();
             model.put("heros",heros);
+
             return new ModelAndView(model , "hero.hbs");
         },new HandlebarsTemplateEngine());
 
         get("heros/success", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            return new ModelAndView(model,"success.hbs");
+            return new ModelAndView(model,"success.css");
         }, new HandlebarsTemplateEngine());
 
 
-//
+
 
         get("/squad/list", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+
             ArrayList<Squad> squad = Squad.getAll();
             model.put("squad", squad);
             return new ModelAndView(model, "squad.hbs");
@@ -84,23 +91,6 @@ public class App {
             return new ModelAndView(model, "Squadsuccess.hbs");
         }, new HandlebarsTemplateEngine());
 
-//        get("squad/success", (request, response) -> {
-//            Map<String, Object> model = new HashMap<String, Object>();
-//            return new ModelAndView(model,"success.hbs");
-//        }, new HandlebarsTemplateEngine());
-
-
-
-
-
-
-//        get("/heros/new", (request, response) -> {
-//            Heros heros = new Heros("thor", 13, "Hammer", "cake");
-//            Map<String, Object> model = new HashMap<String, Object>();
-//            ArrayList myHerosArraylist = Heros.getAll();
-//            model.put("myHeros", myHerosArraylist);
-//            return new ModelAndView(new HashMap(), "heroform.hbs");
-//        }, new HandlebarsTemplateEngine());
 
 
 
