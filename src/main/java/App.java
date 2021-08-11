@@ -23,16 +23,11 @@ public class App {
             int age = Integer.parseInt(request.queryParams("age"));
             String power = request.queryParams("power");
             String weakness = request.queryParams("weakness");
-
-            ArrayList<Squad> squads =Squad.getAll();
-            model.put("squads",squads);
-            int squadId = Integer.parseInt(request.params("squadId"));
-
-            Heros heros = new Heros(name,age,power,weakness);
+            String squadId = request.params("squadId");
+            Heros heros = new Heros(name,age,power,weakness,squadId);
             model.put("heros" ,heros);
-
             System.out.println(request.queryParams("name"));
-            return new ModelAndView(model, "success.css");
+            return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
 
@@ -48,13 +43,13 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             ArrayList<Heros> heros=Heros.getAll();
             model.put("heros",heros);
-
             return new ModelAndView(model , "hero.hbs");
         },new HandlebarsTemplateEngine());
 
+
         get("heros/success", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            return new ModelAndView(model,"success.css");
+            return new ModelAndView(model,"success.hbs");
         }, new HandlebarsTemplateEngine());
 
 
@@ -62,7 +57,6 @@ public class App {
 
         get("/squad/list", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-
             ArrayList<Squad> squad = Squad.getAll();
             model.put("squad", squad);
             return new ModelAndView(model, "squad.hbs");
@@ -84,18 +78,12 @@ public class App {
             String name = request.queryParams("name");
             String cause = request.queryParams("cause");
             int maxsize = Integer.parseInt(request.queryParams("maxsize"));
-
             Squad squad = new Squad(name,cause,maxsize);
             model.put("squad" ,squad);
-
             return new ModelAndView(model, "Squadsuccess.hbs");
         }, new HandlebarsTemplateEngine());
 
-
-
-
     }
-
 
 }
 

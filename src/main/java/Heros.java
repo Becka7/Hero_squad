@@ -7,10 +7,10 @@ public class Heros {
     private String weakness;
     private static ArrayList<Heros>mInstance= new ArrayList<Heros>();
     private int id;
-    private int squadId;
+    private String squadId;
 
 
-    public Heros(String name,int age ,String power,String weakness){
+    public Heros(String name,int age ,String power,String weakness,String squadId){
         this.name=name;
         this.age=age;
         this.power=power;
@@ -28,6 +28,10 @@ public class Heros {
 
     public String getWeakness() {return weakness;}
 
+    public void setSquadId(String squadId) {
+        this.squadId = squadId;
+    }
+
     public static ArrayList<Heros> getAll(){return mInstance;}
 
     public int getId() {
@@ -38,12 +42,13 @@ public class Heros {
         this.id = id;
     }
 
-    public int getSquadId() {
+    public String getSquadId() {
         return squadId;
     }
 
-    public void setSquadId(int squadId) {
-        this.squadId = squadId;
+    public static Heros findById(int id){
+
+        return mInstance.get(id -1);
     }
 
     public void deleteHero(){

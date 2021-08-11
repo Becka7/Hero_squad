@@ -23,9 +23,7 @@ public class Squad {
         return cause;
     }
 
-    public void setMaxsize(int maxsize) {
-        this.maxsize = maxsize;
-    }
+    public int getMaxsize(){return maxsize;}
 
     public static ArrayList<Squad> getAll() {
         return mInstances;
@@ -40,7 +38,8 @@ public class Squad {
     }
 
     public static Squad findById(int id){
-       return mInstances.get(id -1);
+
+        return mInstances.get(id -1);
     }
 }
 
